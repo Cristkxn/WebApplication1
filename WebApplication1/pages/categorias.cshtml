@@ -1,0 +1,41 @@
+﻿@page
+@using AdventureWorksNS.Data
+@model WebApplication1.pages.categoriasModel
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+
+<div class="row">
+    <h1 class="display-2">Categorias de productos</h1>
+
+    <form method="POST">
+        <div>
+            <div><input asp-for="dato.Name" placeholder="nombre" /></div>
+         
+            <div><input type="submit" /></div>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th></th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.cat  is not null)
+            {
+                @foreach (ProductCategory  c in Model.cat)
+                {
+                    <tr>
+                        <td>@c.Name</td>
+                      
+                    </tr>
+                }
+            }
+        </tbody>
+
+    </table>
+
+</div>

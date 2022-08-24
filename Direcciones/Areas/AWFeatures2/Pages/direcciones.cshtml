@@ -1,0 +1,24 @@
+﻿@page
+@model Direcciones.Areas.AWFeatures2.Pages.direccionesModel
+@using AdventureWorksNS.Data
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+
+<div class="col-sm-3">
+@foreach(Address direccion in Model.direct)
+{
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+
+            <div class="card-header">@direccion.AddressId</div>
+    <div class="card-body text-dark">
+                <h5 class="card-tile">Ciudad: @direccion.City</h5>
+                <p class="card-text">Region: @direccion.CountryRegion</p>
+
+                <p class="card-text">Fecha: @direccion.ModifiedDate</p>
+
+    </div>
+    </div>
+}
+
+    </div>
